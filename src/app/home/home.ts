@@ -22,7 +22,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  readonly brandName = 'NanoScanDR';
+  readonly brandName = '';
 
   readonly navLogo: NavLogo = {
     src: '/assets/images/logo.jpeg',
@@ -30,13 +30,11 @@ export class HomeComponent {
     width: 148,
     height: 40,
     route: '/',
-    fragment: 'carousel',
   };
 
   readonly navLinks: NavLink[] = [
-    { label: 'Overview', route: '/', fragment: 'carousel' },
+    { label: 'Overview', route: '/' },
     { label: 'Products', route: '/products' },
-    { label: 'About', route: '/about' },
     { label: 'Contact', route: '/contact' },
   ];
 
@@ -67,7 +65,7 @@ export class HomeComponent {
       ctaRoute: '/products/rfa-1417s',
     },
     {
-      src: 'https://images.unsplash.com/photo-1581091012184-7f24d58f3a4c?auto=format&w=1600&q=80',
+      src: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&w=1600&q=80',
       alt: 'Clinician examining diagnostic monitor',
       width: 1600,
       height: 900,
@@ -99,7 +97,6 @@ export class HomeComponent {
     width: 40,
     height: 40,
     route: '/',
-    fragment: 'carousel',
   };
 
   readonly footerText = '© 2026 NanoScanDR. All rights reserved.';

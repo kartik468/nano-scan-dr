@@ -18,7 +18,7 @@ import { ContactSectionComponent } from '../features/contact/contact';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactPageComponent {
-  readonly brandName = 'NanoScanDR';
+  readonly brandName = '';
 
   readonly navLogo: NavLogo = {
     src: '/assets/images/logo.jpeg',
@@ -26,13 +26,11 @@ export class ContactPageComponent {
     width: 148,
     height: 40,
     route: '/',
-    fragment: 'carousel',
   };
 
   readonly navLinks: NavLink[] = [
-    { label: 'Overview', route: '/', fragment: 'carousel' },
+    { label: 'Overview', route: '/' },
     { label: 'Products', route: '/products' },
-    { label: 'About', route: '/about' },
     { label: 'Contact', route: '/contact' },
   ];
 
@@ -45,7 +43,6 @@ export class ContactPageComponent {
     width: 40,
     height: 40,
     route: '/',
-    fragment: 'carousel',
   };
 
   readonly footerText = '© 2026 NanoScanDR. All rights reserved.';

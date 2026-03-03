@@ -74,6 +74,10 @@ textarea {
     box-shadow var(--transition-fast);
 }
 
+textarea {
+  resize: vertical;
+}
+
 input:focus-visible,
 textarea:focus-visible {
   outline: none;

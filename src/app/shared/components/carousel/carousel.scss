@@ -1,6 +1,6 @@
 .carousel {
   position: relative;
-  min-height: 100svh;
+  min-height: clamp(420px, 65svh, 640px);
   display: flex;
   flex-direction: column;
   justify-content: center;

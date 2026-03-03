@@ -19,13 +19,6 @@ import {
 import { PdfViewerComponent } from '../shared/components/pdf-viewer/pdf-viewer';
 import { ProductService } from '../services/product.service';
 
-interface DownloadCard {
-  id: string;
-  title: string;
-  description: string;
-  url: string;
-}
-
 @Component({
   selector: 'app-product',
   imports: [NavbarComponent, FooterComponent, PdfViewerComponent, RouterLink],
@@ -55,36 +48,16 @@ export class ProductComponent {
     width: 148,
     height: 40,
     route: '/',
-    fragment: 'carousel',
   };
 
   readonly navLinks: NavLink[] = [
-    { label: 'Overview', route: '/', fragment: 'carousel' },
+    { label: 'Overview', route: '/' },
     { label: 'Products', route: '/products' },
-    { label: 'About', route: '/about' },
     { label: 'Contact', route: '/contact' },
   ];
 
   readonly navToggleLabel = 'Toggle navigation';
   readonly navMenuId = 'main-navigation';
-
-  readonly downloadCards = computed<DownloadCard[]>(() => {
-    const pdfs = this.product().pdfs;
-    return [
-      {
-        id: 'brochure',
-        title: 'Product brochure',
-        description: 'Quick overview for clinical teams and procurement.',
-        url: pdfs.brochure,
-      },
-      {
-        id: 'catalogue',
-        title: 'Technical catalogue',
-        description: 'Full specifications and detector performance details.',
-        url: pdfs.catalogue,
-      },
-    ];
-  });
 
   readonly viewerOpen = signal(false);
   readonly activePdf = signal('');
@@ -95,7 +68,6 @@ export class ProductComponent {
     width: 40,
     height: 40,
     route: '/',
-    fragment: 'carousel',
   };
 
   readonly footerText = '© 2026 NanoScanDR. All rights reserved.';

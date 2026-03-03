@@ -18,6 +18,8 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   tab-size: 4;
+  scroll-padding-top: var(--navbar-height, 72px);
+  scroll-behavior: smooth;
 }
 
 body {

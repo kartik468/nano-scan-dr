@@ -37,7 +37,7 @@
             <button
               class="product__hero-button"
               type="button"
-              (click)="openPdf(downloadCards()[0].url)"
+              (click)="openPdf(product().pdfs.brochure)"
             >
               View brochure
             </button>
@@ -47,28 +47,6 @@
     </div>
   </section>
 
-  <section class="product__downloads">
-    <div class="container">
-      <h2 class="product__section-title">Downloads</h2>
-      <div class="product__download-grid">
-        @for (card of downloadCards(); track card.id) {
-          <article class="product__download-card">
-            <div>
-              <h3 class="product__download-title">{{ card.title }}</h3>
-              <p class="product__download-text">{{ card.description }}</p>
-            </div>
-            <button
-              class="product__download-button"
-              type="button"
-              (click)="openPdf(card.url)"
-            >
-              View PDF
-            </button>
-          </article>
-        }
-      </div>
-    </div>
-  </section>
 </main>
 
 <app-footer [logo]="footerLogo" [text]="footerText" />

@@ -256,7 +256,7 @@ const RFA_1014: Product = {
   subtitle: '10×12" Portable Flat Panel Detector',
   tagline: 'Ultra-portable 10×12" detector for extremity and paediatric imaging',
   heroImage:
-    'https://images.unsplash.com/photo-1581091012184-7f24d58f3a4c?auto=format&w=1600&q=80',
+    'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&w=1600&q=80',
   overview:
     'The RFA-1014 is a compact, ultra-portable flat panel detector optimized for extremity, ' +
     'paediatric, and point-of-care imaging. Weighing just 1.9 kg, it can be carried to bedside or ' +

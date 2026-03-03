@@ -78,7 +78,7 @@
 
 ---
 
-## Step 10 — `PdfViewerComponent`
+## Step 7 — `PdfViewerComponent`
 
 **Path:** `src/app/shared/components/pdf-viewer/`
 
@@ -93,7 +93,7 @@
 
 ---
 
-## Step 12 — `ContactSectionComponent`
+## Step 8 — `ContactSectionComponent`
 
 **Path:** `src/app/features/contact/`
 
@@ -108,7 +108,7 @@
 
 ---
 
-## Step 13 — `FooterComponent`
+## Step 9 — `FooterComponent`
 
 **Path:** `src/app/shared/components/footer/`
 
@@ -118,7 +118,7 @@
 
 ---
 
-## Step 14 — `HomeComponent`
+## Step 10 — `HomeComponent`
 
 **Path:** `src/app/home/`
 
@@ -141,7 +141,7 @@
 
 ---
 
-## Step 15 — Final Verification
+## Step 11 — Final Verification
 
 - [ ] `npm start` — site loads at `localhost:4200`; all sections visible; carousel auto-advances; accordion opens/closes; PDF overlay opens full-screen and closes via button or Escape; download anchor downloads the file
 - [ ] `npm test` — existing spec passes; no regressions
