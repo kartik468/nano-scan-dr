@@ -1,0 +1,58 @@
+@if (isOpen()) {
+  <div
+    class="pdf-viewer"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-labelledby]="titleId"
+  >
+    <div class="pdf-viewer__panel">
+      <div class="pdf-viewer__bar">
+        <span class="pdf-viewer__title" [attr.id]="titleId">
+          {{ productLabel() }}
+        </span>
+
+        <div class="pdf-viewer__actions">
+          @if (hasPdfUrl()) {
+            <a
+              class="pdf-viewer__button pdf-viewer__button--primary"
+              [href]="pdfUrl()"
+              download
+            >
+              {{ downloadLabel() }}
+            </a>
+          } @else {
+            <span
+              class="pdf-viewer__button pdf-viewer__button--disabled"
+              aria-disabled="true"
+            >
+              {{ downloadLabel() }}
+            </span>
+          }
+
+          <button
+            #closeButton
+            class="pdf-viewer__button"
+            type="button"
+            (click)="close()"
+          >
+            {{ closeLabel() }}
+          </button>
+        </div>
+      </div>
+
+      <div class="pdf-viewer__body">
+        @if (safePdfUrl(); as url) {
+          <iframe
+            class="pdf-viewer__frame"
+            [src]="url"
+            [title]="iframeTitle()"
+          ></iframe>
+        } @else {
+          <div class="pdf-viewer__empty">
+            <p>No PDF selected.</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

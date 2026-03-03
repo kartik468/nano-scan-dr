@@ -22,26 +22,11 @@ export interface NavLink {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  readonly logo = input<NavLogo>({
-    src: '/assets/images/logo.jpeg',
-    alt: 'NanoScanDR logo',
-    width: 148,
-    height: 40,
-    href: '#carousel',
-  });
-
-  readonly links = input<NavLink[]>([
-    { label: 'Overview', href: '#carousel' },
-    { label: 'Features', href: '#features' },
-    { label: 'Performance', href: '#performance' },
-    { label: 'Specs', href: '#specs' },
-    { label: 'Downloads', href: '#download' },
-    { label: 'Contact', href: '#contact' },
-  ]);
-
-  readonly brandName = input<string>('');
-  readonly toggleLabel = input<string>('Toggle navigation');
-  readonly menuId = input<string>('main-navigation');
+  readonly logo = input.required<NavLogo>();
+  readonly links = input.required<NavLink[]>();
+  readonly brandName = input.required<string>();
+  readonly toggleLabel = input.required<string>();
+  readonly menuId = input.required<string>();
 
   readonly isMenuOpen = signal(false);
 

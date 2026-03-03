@@ -1,0 +1,131 @@
+.contact {
+  padding: var(--space-16) 0;
+  background: var(--color-surface-alt);
+}
+
+.contact__grid {
+  display: grid;
+  gap: var(--space-10);
+}
+
+.contact__title {
+  margin: 0 0 var(--space-4);
+}
+
+.contact__intro {
+  margin: 0 0 var(--space-8);
+  color: var(--color-text-muted);
+}
+
+.contact__details {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.contact__item {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact__label {
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+.contact__value {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.contact__value:hover,
+.contact__value:focus-visible {
+  color: var(--color-primary);
+  outline: none;
+}
+
+.contact__line {
+  display: block;
+}
+
+.contact__form {
+  background: var(--color-surface);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contact__field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: var(--space-3);
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+input.is-invalid,
+textarea.is-invalid {
+  border-color: var(--color-error);
+}
+
+.contact__error {
+  color: var(--color-error);
+  font-size: var(--text-sm);
+}
+
+.contact__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact__submit {
+  align-self: flex-start;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.contact__submit:hover,
+.contact__submit:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+
+.contact__success {
+  margin: 0;
+  color: var(--color-success);
+  font-weight: var(--font-medium);
+}
+
+@media (min-width: 900px) {
+  .contact__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
