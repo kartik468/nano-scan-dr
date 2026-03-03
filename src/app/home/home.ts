@@ -13,10 +13,11 @@ import {
   FooterComponent,
   type FooterLogo,
 } from '../shared/components/footer/footer';
+import { ContactSectionComponent } from '../features/contact/contact';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, CarouselComponent, FooterComponent],
+  imports: [NavbarComponent, CarouselComponent, ContactSectionComponent, FooterComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

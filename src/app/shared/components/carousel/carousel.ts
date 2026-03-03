@@ -108,7 +108,7 @@ export class CarouselComponent {
         return;
       }
 
-      this.intervalId = setInterval(() => this.next(), delay);
+      this.intervalId = setInterval(() => this.autoAdvance(), delay);
     });
 
     this.destroyRef.onDestroy(() => {
@@ -121,6 +121,12 @@ export class CarouselComponent {
 
   pauseAutoAdvance(): void {
     this.isPaused.set(true);
+  }
+
+  private autoAdvance(): void {
+    const length = this.slides().length;
+    if (length === 0) return;
+    this.currentIndex.update((index) => (index + 1) % length);
   }
 
   previous(): void {
