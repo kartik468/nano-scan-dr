@@ -32,6 +32,7 @@ export interface Product {
   subtitle: string;
   tagline: string;
   overview: string;
+  heroImage: string;
   features: ProductFeature[];
   performanceStats: ProductPerformanceStat[];
   specGroups: ProductSpecGroup[];

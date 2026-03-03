@@ -9,12 +9,19 @@ import {
   signal,
 } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 export interface CarouselSlide {
   src: string;
   alt: string;
   width: number;
   height: number;
+  // Optional per-slide content overrides
+  headline?: string;
+  subcopy?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaRoute?: string | null;
 }
 
 export interface CarouselLabels {
@@ -26,7 +33,7 @@ export interface CarouselLabels {
 
 @Component({
   selector: 'app-carousel',
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, RouterLink],
   templateUrl: './carousel.html',
   styleUrl: './carousel.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -41,6 +48,7 @@ export class CarouselComponent {
   readonly subcopy = input.required<string>();
   readonly ctaLabel = input.required<string>();
   readonly ctaHref = input.required<string>();
+  readonly ctaRoute = input.required<string | null>();
   readonly labels = input.required<CarouselLabels>();
   readonly autoAdvanceMs = input.required<number>();
 
@@ -48,6 +56,28 @@ export class CarouselComponent {
   readonly isPaused = signal(false);
 
   readonly dots = computed(() => this.slides().map((_, index) => index));
+
+  private readonly currentSlide = computed(() => this.slides()[this.currentIndex()]);
+
+  readonly activeHeadline = computed(
+    () => this.currentSlide()?.headline ?? this.headline(),
+  );
+  readonly activeSubcopy = computed(
+    () => this.currentSlide()?.subcopy ?? this.subcopy(),
+  );
+  readonly activeCtaLabel = computed(
+    () => this.currentSlide()?.ctaLabel ?? this.ctaLabel(),
+  );
+  readonly activeCtaHref = computed(
+    () => this.currentSlide()?.ctaHref ?? this.ctaHref(),
+  );
+  readonly activeCtaRoute = computed<string | null>(() => {
+    const slide = this.currentSlide();
+    if (slide && 'ctaRoute' in slide) {
+      return slide.ctaRoute ?? null;
+    }
+    return this.ctaRoute();
+  });
 
   private readonly destroyRef = inject(DestroyRef);
   private intervalId: ReturnType<typeof setInterval> | null = null;

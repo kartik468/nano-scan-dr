@@ -1,0 +1,84 @@
+<app-navbar
+  [logo]="navLogo"
+  [links]="navLinks"
+  [brandName]="product().name"
+  [toggleLabel]="navToggleLabel"
+  [menuId]="navMenuId"
+/>
+
+<main class="product">
+  <section class="product__hero">
+    <div class="container">
+      <a class="product__back" routerLink="/products">← All products</a>
+
+      <div class="product__hero-grid">
+        <div class="product__hero-copy">
+          <p class="product__eyebrow">Flat panel detector</p>
+          <h1 class="product__title">{{ product().name }}</h1>
+          <p class="product__subtitle">{{ product().subtitle }}</p>
+          <p class="product__tagline">{{ product().tagline }}</p>
+          <p class="product__overview">{{ product().overview }}</p>
+        </div>
+
+        <div class="product__hero-card">
+          <img
+            class="product__hero-image"
+            [src]="product().heroImage"
+            [alt]="product().name + ' in a clinical environment'"
+            width="800"
+            height="450"
+          />
+          <div class="product__hero-card-body">
+            <h2 class="product__hero-card-title">Get the full brochure</h2>
+            <p class="product__hero-card-text">
+              View or download the latest product documentation for procurement
+              and clinical review.
+            </p>
+            <button
+              class="product__hero-button"
+              type="button"
+              (click)="openPdf(downloadCards()[0].url)"
+            >
+              View brochure
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product__downloads">
+    <div class="container">
+      <h2 class="product__section-title">Downloads</h2>
+      <div class="product__download-grid">
+        @for (card of downloadCards(); track card.id) {
+          <article class="product__download-card">
+            <div>
+              <h3 class="product__download-title">{{ card.title }}</h3>
+              <p class="product__download-text">{{ card.description }}</p>
+            </div>
+            <button
+              class="product__download-button"
+              type="button"
+              (click)="openPdf(card.url)"
+            >
+              View PDF
+            </button>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer [logo]="footerLogo" [text]="footerText" />
+
+<app-pdf-viewer
+  [pdfUrl]="activePdf()"
+  [isOpen]="viewerOpen()"
+  [productLabel]="product().name"
+  [downloadLabel]="'Download'"
+  [closeLabel]="'Close ✕'"
+  [iframeTitle]="'Product brochure'"
+  (closed)="closeViewer()"
+/>

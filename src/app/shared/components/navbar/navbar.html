@@ -1,18 +1,38 @@
 <header class="navbar">
   <div class="navbar__inner">
-    <a class="navbar__brand" [href]="logo().href">
-      <img
-        class="navbar__logo"
-        [ngSrc]="logo().src"
-        [width]="logo().width"
-        [height]="logo().height"
-        [alt]="logo().alt"
-        priority
-      />
-      @if (brandName()) {
-        <span class="navbar__brand-text">{{ brandName() }}</span>
-      }
-    </a>
+    @if (logo().route) {
+      <a
+        class="navbar__brand"
+        [routerLink]="logo().route"
+        [fragment]="logo().fragment"
+      >
+        <img
+          class="navbar__logo"
+          [ngSrc]="logo().src"
+          [width]="logo().width"
+          [height]="logo().height"
+          [alt]="logo().alt"
+          priority
+        />
+        @if (brandName()) {
+          <span class="navbar__brand-text">{{ brandName() }}</span>
+        }
+      </a>
+    } @else {
+      <a class="navbar__brand" [href]="logo().href">
+        <img
+          class="navbar__logo"
+          [ngSrc]="logo().src"
+          [width]="logo().width"
+          [height]="logo().height"
+          [alt]="logo().alt"
+          priority
+        />
+        @if (brandName()) {
+          <span class="navbar__brand-text">{{ brandName() }}</span>
+        }
+      </a>
+    }
 
     <button
       class="navbar__toggle"
@@ -31,10 +51,21 @@
       [attr.id]="menuId()"
       [class.is-open]="isMenuOpen()"
     >
-      @for (link of links(); track link.href) {
-        <a class="navbar__link" [href]="link.href" (click)="closeMenu()">
-          {{ link.label }}
-        </a>
+      @for (link of links(); track link.label) {
+        @if (link.route) {
+          <a
+            class="navbar__link"
+            [routerLink]="link.route"
+            [fragment]="link.fragment"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+        } @else {
+          <a class="navbar__link" [href]="link.href" (click)="closeMenu()">
+            {{ link.label }}
+          </a>
+        }
       }
     </nav>
   </div>

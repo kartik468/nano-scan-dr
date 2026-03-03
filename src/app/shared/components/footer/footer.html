@@ -1,14 +1,30 @@
 <footer class="footer">
   <div class="footer__inner">
-    <a class="footer__brand" [href]="logo().href">
-      <img
-        class="footer__logo"
-        [ngSrc]="logo().src"
-        [width]="logo().width"
-        [height]="logo().height"
-        [alt]="logo().alt"
-      />
-    </a>
+    @if (logo().route) {
+      <a
+        class="footer__brand"
+        [routerLink]="logo().route"
+        [fragment]="logo().fragment"
+      >
+        <img
+          class="footer__logo"
+          [ngSrc]="logo().src"
+          [width]="logo().width"
+          [height]="logo().height"
+          [alt]="logo().alt"
+        />
+      </a>
+    } @else {
+      <a class="footer__brand" [href]="logo().href">
+        <img
+          class="footer__logo"
+          [ngSrc]="logo().src"
+          [width]="logo().width"
+          [height]="logo().height"
+          [alt]="logo().alt"
+        />
+      </a>
+    }
     <p class="footer__text">{{ text() }}</p>
   </div>
 </footer>

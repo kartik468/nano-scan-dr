@@ -3,7 +3,6 @@ import {
   Component,
   DestroyRef,
   ElementRef,
-  afterNextRender,
   computed,
   effect,
   inject,
@@ -71,7 +70,7 @@ export class PdfViewerComponent {
       if (!this.isOpen()) {
         return;
       }
-      afterNextRender(() => this.focusCloseButton());
+      setTimeout(() => this.focusCloseButton(), 0);
     });
 
     this.destroyRef.onDestroy(() => {

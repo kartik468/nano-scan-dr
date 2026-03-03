@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
 
 export interface NavLogo {
@@ -6,17 +7,21 @@ export interface NavLogo {
   alt: string;
   width: number;
   height: number;
-  href: string;
+  href?: string;
+  route?: string;
+  fragment?: string;
 }
 
 export interface NavLink {
   label: string;
-  href: string;
+  href?: string;
+  route?: string;
+  fragment?: string;
 }
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,0 +1,29 @@
+.contact-page {
+  background: var(--color-surface);
+}
+
+.contact-page__hero {
+  padding: var(--space-14) 0 var(--space-10);
+  background: linear-gradient(160deg, #e0ecff, #ffffff 70%);
+}
+
+.contact-page__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3);
+}
+
+.contact-page__title {
+  margin: 0 0 var(--space-3);
+}
+
+.contact-page__lead {
+  margin: 0;
+  max-width: 620px;
+}
+
+.contact-page__form {
+  padding: var(--space-4) 0 var(--space-16);
+}

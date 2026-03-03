@@ -21,13 +21,19 @@
 
   <div class="carousel__content">
     <div class="carousel__copy">
-      <h1 class="carousel__headline">{{ headline() }}</h1>
-      <p class="carousel__subcopy">{{ subcopy() }}</p>
+      <h1 class="carousel__headline">{{ activeHeadline() }}</h1>
+      <p class="carousel__subcopy">{{ activeSubcopy() }}</p>
     </div>
 
-    <a class="carousel__cta" [href]="ctaHref()">
-      {{ ctaLabel() }}
-    </a>
+    @if (activeCtaRoute()) {
+      <a class="carousel__cta" [routerLink]="activeCtaRoute()">
+        {{ activeCtaLabel() }}
+      </a>
+    } @else {
+      <a class="carousel__cta" [href]="activeCtaHref()">
+        {{ activeCtaLabel() }}
+      </a>
+    }
   </div>
 
   <div class="carousel__controls">

@@ -1,0 +1,25 @@
+<app-navbar
+  [logo]="navLogo"
+  [links]="navLinks"
+  [brandName]="brandName"
+  [toggleLabel]="navToggleLabel"
+  [menuId]="navMenuId"
+/>
+
+<main class="contact-page">
+  <section class="contact-page__hero">
+    <div class="container">
+      <p class="contact-page__eyebrow">Contact</p>
+      <h1 class="contact-page__title">Talk with NanoScanDR</h1>
+      <p class="contact-page__lead">
+        Reach out for product demos, technical questions, or procurement details.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-page__form">
+    <app-contact-section />
+  </section>
+</main>
+
+<app-footer [logo]="footerLogo" [text]="footerText" />
