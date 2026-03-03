@@ -1,0 +1,65 @@
+<section class="carousel" role="region" [attr.aria-label]="labels().region">
+  <div class="carousel__slides">
+    @for (slide of slides(); track slide.src; let index = $index) {
+      <div
+        class="carousel__slide"
+        [class.is-active]="index === currentIndex()"
+        [attr.aria-hidden]="index !== currentIndex()"
+      >
+        <img
+          class="carousel__image"
+          [ngSrc]="slide.src"
+          [width]="slide.width"
+          [height]="slide.height"
+          [alt]="slide.alt"
+          [priority]="index === 0"
+        />
+      </div>
+    }
+    <div class="carousel__scrim" aria-hidden="true"></div>
+  </div>
+
+  <div class="carousel__content">
+    <div class="carousel__copy">
+      <h1 class="carousel__headline">{{ headline() }}</h1>
+      <p class="carousel__subcopy">{{ subcopy() }}</p>
+    </div>
+
+    <a class="carousel__cta" [href]="ctaHref()">
+      {{ ctaLabel() }}
+    </a>
+  </div>
+
+  <div class="carousel__controls">
+    <button
+      class="carousel__control"
+      type="button"
+      (click)="previous()"
+      [attr.aria-label]="labels().previous"
+    >
+      <span aria-hidden="true">&#8592;</span>
+    </button>
+
+    <div class="carousel__dots" role="tablist">
+      @for (index of dots(); track index) {
+        <button
+          class="carousel__dot"
+          type="button"
+          [class.is-active]="index === currentIndex()"
+          (click)="goTo(index)"
+          [attr.aria-label]="labels().slidePrefix + ' ' + (index + 1)"
+          [attr.aria-current]="index === currentIndex() ? 'true' : null"
+        ></button>
+      }
+    </div>
+
+    <button
+      class="carousel__control"
+      type="button"
+      (click)="next()"
+      [attr.aria-label]="labels().next"
+    >
+      <span aria-hidden="true">&#8594;</span>
+    </button>
+  </div>
+</section>

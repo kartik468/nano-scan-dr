@@ -2,7 +2,7 @@
 name: Coder
 description: Writes code following mandatory coding principles.
 model: GPT-5.2-Codex
-tools: ['vscode', 'execute', 'read', 'agent', 'context7/*', 'github/*', 'edit', 'search', 'web', 'memory', 'todo']
+tools: ['vscode/extensions', 'vscode/getProjectSetupInfo', 'vscode/installExtension', 'vscode/newWorkspace', 'vscode/openSimpleBrowser', 'vscode/runCommand', 'vscode/askQuestions', 'vscode/vscodeAPI', 'execute/getTerminalOutput', 'execute/awaitTerminal', 'execute/killTerminal', 'execute/runTask', 'execute/createAndRunTask', 'execute/runInTerminal', 'execute/runNotebookCell', 'execute/testFailure', 'read/terminalSelection', 'read/terminalLastCommand', 'read/getTaskOutput', 'read/getNotebookSummary', 'read/problems', 'read/readFile', 'read/readNotebookCellOutput', 'agent/runSubagent', 'edit/createDirectory', 'edit/createFile', 'edit/createJupyterNotebook', 'edit/editFiles', 'edit/editNotebook', 'search/changes', 'search/codebase', 'search/fileSearch', 'search/listDirectory', 'search/searchResults', 'search/textSearch', 'search/usages', 'web/fetch', 'web/githubRepo', 'angular-cli/ai_tutor', 'angular-cli/get_best_practices', 'angular-cli/list_projects', 'angular-cli/onpush_zoneless_migration', 'angular-cli/search_documentation', 'todo']
 ---
 
 

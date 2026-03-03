@@ -30,13 +30,13 @@
 
 ## Step 3 — Product Data Model & Service
 
-- [ ] Create `src/app/models/product.model.ts` with typed interfaces:
+- [x] Create `src/app/models/product.model.ts` with typed interfaces:
   - `ProductFeature` — `{ icon: string; title: string; description: string }`
   - `ProductSpec` — `{ label: string; value: string }`
   - `ProductSpecGroup` — `{ category: string; specs: ProductSpec[] }`
   - `ProductPerformanceStat` — `{ value: string; unit: string; label: string; description: string }`
   - `Product` — full product interface (name, tagline, features, specGroups, performanceStats, pdfPaths)
-- [ ] Create `src/app/services/product.service.ts` (`providedIn: 'root'`):
+- [x] Create `src/app/services/product.service.ts` (`providedIn: 'root'`):
   - Exposes `product = signal<Product>(RFA_1717DIC_DATA)` populated from `product-detail.md`
   - All spec categories: Imaging, Mechanical, Connectivity, Environmental
 
@@ -44,9 +44,9 @@
 
 ## Step 4 — App Shell Cleanup & Routing
 
-- [ ] Replace `src/app/app.html` with just `<router-outlet />`
-- [ ] Trim `src/app/app.ts` to only import `RouterOutlet`; remove the `title` signal
-- [ ] Add a single lazy-loaded `/` route in `src/app/app.routes.ts` pointing to `HomeComponent`
+- [x] Replace `src/app/app.html` with just `<router-outlet />`
+- [x] Trim `src/app/app.ts` to only import `RouterOutlet`; remove the `title` signal
+- [x] Add a single lazy-loaded `/` route in `src/app/app.routes.ts` pointing to `HomeComponent`
   - Path: `src/app/home/home.ts` (to be created in Step 14)
 
 ---
@@ -55,12 +55,12 @@
 
 **Path:** `src/app/shared/components/navbar/`
 
-- [ ] Sticky header (`position: sticky; top: 0; z-index: 1000`)
-- [ ] Client logo using `NgOptimizedImage` (links to `public/assets/images/logo.jpeg`)
-- [ ] Hamburger toggle — `isMenuOpen = signal(false)`, toggled on click
-- [ ] Anchor links: `#carousel`, `#features`, `#performance`, `#specs`, `#download`, `#contact`
-- [ ] Desktop: horizontal nav; Mobile (`< 768px`): slide-down overlay menu
-- [ ] Accessibility: `aria-expanded` on toggle button, `aria-label="Main navigation"` on `<nav>`
+- [x] Sticky header (`position: sticky; top: 0; z-index: 1000`)
+- [x] Client logo using `NgOptimizedImage` (links to `public/assets/images/logo.jpeg`)
+- [x] Hamburger toggle — `isMenuOpen = signal(false)`, toggled on click
+- [x] Anchor links: `#carousel`, `#features`, `#performance`, `#specs`, `#download`, `#contact`
+- [x] Desktop: horizontal nav; Mobile (`< 768px`): slide-down overlay menu
+- [x] Accessibility: `aria-expanded` on toggle button, `aria-label="Main navigation"` on `<nav>`
 
 ---
 
@@ -68,52 +68,13 @@
 
 **Path:** `src/app/features/carousel/`
 
-- [ ] Full-viewport (`100svh`) section with dark scrim overlay (`rgba(0,0,0,0.5)`)
-- [ ] 3 hardcoded Unsplash radiology/medical-device images (JPEG URLs with `?auto=format&w=1600`)
-- [ ] `currentIndex = signal(0)` with previous/next arrow buttons
-- [ ] Dot indicators — `computed()` from slides array
-- [ ] Auto-advance every 5 seconds using `setInterval`; paused when user interacts
-- [ ] Headline: *"Advanced Flat Panel Detector Technology"*, sub-copy, CTA button ("View Product") that scrolls to `#features`
-- [ ] Arrow and dot controls: `aria-label` on each button; `role="region" aria-label="Product images"`
-
----
-
-## Step 7 — `FeatureGridComponent`
-
-**Path:** `src/app/features/feature-grid/`
-
-- [ ] Reads `product().features` from `ProductService` via `inject()`
-- [ ] Responsive CSS Grid: 1 col (mobile) → 2 col (768px) → 3 col (1024px)
-- [ ] Each card: inline SVG icon + title + description
-- [ ] Six features to represent: Spatial Resolution, Acquisition Speed, AED Trigger, IP68 Waterproofing, 16-bit ADC, Gigabit Ethernet
-- [ ] Section heading: *"Key Features"*
-
----
-
-## Step 8 — `PerformanceComponent`
-
-**Path:** `src/app/features/performance/`
-
-- [ ] Three large stat cards using `product().performanceStats`:
-  - **3.4 lp/mm** — Spatial Resolution
-  - **>77% MTF** — Modulation Transfer Function at 0.5 lp/mm
-  - **>57% DQE** — Detective Quantum Efficiency at 1 lp/mm
-- [ ] `computed()` for display string formatting
-- [ ] Contrasting background section (e.g. `--color-surface-alt`) to visually separate from feature grid
-- [ ] Section heading: *"Performance"*
-
----
-
-## Step 9 — `SpecificationsComponent`
-
-**Path:** `src/app/features/specifications/`
-
-- [ ] Accordion UI — `openCategory = signal<string | null>(null)`
-- [ ] Four groups from `product().specGroups`: **Imaging**, **Mechanical**, **Connectivity**, **Environmental**
-- [ ] Each accordion panel: `<dl>` with `<dt>` (label) / `<dd>` (value) pairs
-- [ ] Toggle logic: clicking open group closes it (signal set to `null`); clicking closed group sets it
-- [ ] `aria-expanded` on each accordion trigger button; `role="region"` on each panel
-- [ ] Section heading: *"Specifications"*
+- [x] Full-viewport (`100svh`) section with dark scrim overlay (`rgba(0,0,0,0.5)`)
+- [x] 3 hardcoded Unsplash radiology/medical-device images (JPEG URLs with `?auto=format&w=1600`)
+- [x] `currentIndex = signal(0)` with previous/next arrow buttons
+- [x] Dot indicators — `computed()` from slides array
+- [x] Auto-advance every 5 seconds using `setInterval`; paused when user interacts
+- [x] Headline: *"Advanced Flat Panel Detector Technology"*, sub-copy, CTA button ("View Product") that scrolls to `#features`
+- [x] Arrow and dot controls: `aria-label` on each button; `role="region" aria-label="Product images"`
 
 ---
 
@@ -129,19 +90,6 @@
 - [ ] `Escape` key triggers close — handled in `host: { '(document:keydown.escape)': 'onEscape()' }`
 - [ ] When `isOpen` becomes `true`, focus moves to the close button (`viewChild` + `focus()`)
 - [ ] Background scroll locked when overlay is open (`document.body.style.overflow`)
-
----
-
-## Step 11 — `DownloadSectionComponent`
-
-**Path:** `src/app/features/download/`
-
-- [ ] `viewerOpen = signal(false)`, `activePdf = signal('')`
-- [ ] Two brochure cards (one per PDF in `public/assets/pdfs/`):
-  - Card: title, short description, "View PDF" button
-  - Clicking sets `activePdf` and `viewerOpen(true)`
-- [ ] Hosts `<app-pdf-viewer [pdfUrl]="activePdf()" [isOpen]="viewerOpen()" (closed)="viewerOpen.set(false)">`
-- [ ] Section heading: *"Downloads"*
 
 ---
 
@@ -209,11 +157,7 @@ AppComponent
 └── HomeComponent            (lazy, route: /)
     ├── NavbarComponent
     ├── CarouselComponent
-    ├── FeatureGridComponent
-    ├── PerformanceComponent
-    ├── SpecificationsComponent
-    ├── DownloadSectionComponent
-    │   └── PdfViewerComponent
+    ├── PdfViewerComponent
     ├── ContactSectionComponent
     └── FooterComponent
 ```
@@ -241,10 +185,6 @@ src/
         footer/
     features/
       carousel/
-      feature-grid/
-      performance/
-      specifications/
-      download/
       contact/
     home/
       home.ts

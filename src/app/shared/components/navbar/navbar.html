@@ -1,0 +1,41 @@
+<header class="navbar">
+  <div class="navbar__inner">
+    <a class="navbar__brand" [href]="logo().href">
+      <img
+        class="navbar__logo"
+        [ngSrc]="logo().src"
+        [width]="logo().width"
+        [height]="logo().height"
+        [alt]="logo().alt"
+        priority
+      />
+      @if (brandName()) {
+        <span class="navbar__brand-text">{{ brandName() }}</span>
+      }
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen()"
+      [attr.aria-controls]="menuId()"
+      [attr.aria-label]="toggleLabel()"
+    >
+      <span class="navbar__toggle-icon" aria-hidden="true"></span>
+    </button>
+
+    <nav
+      class="navbar__nav"
+      aria-label="Main navigation"
+      [attr.id]="menuId()"
+      [class.is-open]="isMenuOpen()"
+    >
+      @for (link of links(); track link.href) {
+        <a class="navbar__link" [href]="link.href" (click)="closeMenu()">
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+  </div>
+</header>
