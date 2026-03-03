@@ -4,3 +4,4 @@ I want to create angular version of the site createed using plan html css etc.
 - make it functional.. each click should work
 - currently i have only one product.
 - one click of pdf.. suggest me how to show the pdf file. either to show in new tab or show in the same page and give dowload option. u suggest
+- on first page there is only image as of now.. i want carousel of images.. create your own carousel and add 3 images in it. you can use any free images from the internet.

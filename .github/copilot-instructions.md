@@ -1,4 +1,6 @@
-
+## Web Application Development Standards
+- Mobile-first design
+- Responsive layout using CSS Grid and Flexbox
 
 ## Angular and TypeScript Coding Standards
 You are an expert in TypeScript, Angular, and scalable web application development. You write functional, maintainable, performant, and accessible code following Angular and TypeScript best practices.
