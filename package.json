@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href ./",
+    "build:no-hash": "ng build --base-href ./ --output-hashing=none",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "copy:nano-scan-dr:site": "rm -rf /Users/kartikr/Desktop/git/site-development/kartik/github-pages/kartik468.github.io/nanoscandr/* && cp -r dist/nano-scan-dr/browser/. /Users/kartikr/Desktop/git/site-development/kartik/github-pages/kartik468.github.io/nanoscandr/"
   },
   "prettier": {
     "printWidth": 100,

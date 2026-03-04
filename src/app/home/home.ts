@@ -4,44 +4,16 @@ import {
   type CarouselLabels,
   type CarouselSlide,
 } from '../shared/components/carousel/carousel';
-import {
-  NavbarComponent,
-  type NavLink,
-  type NavLogo,
-} from '../shared/components/navbar/navbar';
-import {
-  FooterComponent,
-  type FooterLogo,
-} from '../shared/components/footer/footer';
 import { ContactSectionComponent } from '../features/contact/contact';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, CarouselComponent, ContactSectionComponent, FooterComponent],
+  imports: [CarouselComponent, ContactSectionComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  readonly brandName = '';
-
-  readonly navLogo: NavLogo = {
-    src: '/assets/images/logo.jpeg',
-    alt: 'NanoScanDR logo',
-    width: 148,
-    height: 40,
-    route: '/',
-  };
-
-  readonly navLinks: NavLink[] = [
-    { label: 'Overview', route: '/' },
-    { label: 'Products', route: '/products' },
-    { label: 'Contact', route: '/contact' },
-  ];
-
-  readonly navToggleLabel = 'Toggle navigation';
-  readonly navMenuId = 'main-navigation';
-
   readonly carouselSlides: CarouselSlide[] = [
     {
       src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&w=1600&q=80',
@@ -91,14 +63,4 @@ export class HomeComponent {
     slidePrefix: 'Go to slide',
   };
   readonly carouselAutoAdvanceMs = 5000;
-
-  readonly footerLogo: FooterLogo = {
-    src: '/assets/images/logo_without_text.png',
-    alt: 'NanoScanDR icon',
-    width: 40,
-    height: 40,
-    route: '/',
-  };
-
-  readonly footerText = '© 2026 NanoScanDR. All rights reserved.';
 }

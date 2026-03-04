@@ -29,7 +29,7 @@ export interface NavLink {
 export class NavbarComponent {
   readonly logo = input.required<NavLogo>();
   readonly links = input.required<NavLink[]>();
-  readonly brandName = input.required<string>();
+  readonly brandName = input<string>('');
   readonly toggleLabel = input.required<string>();
   readonly menuId = input.required<string>();
 
