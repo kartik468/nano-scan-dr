@@ -1,10 +1,10 @@
 .carousel {
   position: relative;
-  min-height: clamp(420px, 65svh, 640px);
+  min-height: clamp(480px, 65svh, 640px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--space-10) var(--container-padding) var(--space-8);
+  padding: var(--space-10) var(--container-padding) var(--space-20);
   color: #fff;
   overflow: hidden;
 }

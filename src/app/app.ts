@@ -20,7 +20,7 @@ export class App {
   };
 
   readonly navLinks: NavLink[] = [
-    { label: 'Overview', route: '/' },
+    { label: 'Overview', route: '/', exact: true },
     { label: 'Products', route: '/products' },
     { label: 'Contact', route: '/contact' },
   ];

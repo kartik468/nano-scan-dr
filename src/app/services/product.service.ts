@@ -3,8 +3,8 @@ import { Product } from '../models/product.model';
 
 // Shared PDFs — same asset used for all three products during testing
 const SHARED_PDFS = {
-  brochure: '/assets/pdfs/product-20210310_RFA-1717S.pdf',
-  catalogue: '/assets/pdfs/product-in-detail-RFA-1717DIC_Catalogue.pdf',
+  brochure: './assets/pdfs/product-20210310_RFA-1717S.pdf',
+  catalogue: './assets/pdfs/product-in-detail-RFA-1717DIC_Catalogue.pdf',
 };
 
 const RFA_1717DIC: Product = {

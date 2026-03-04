@@ -57,6 +57,8 @@
             class="navbar__link"
             [routerLink]="link.route"
             [fragment]="link.fragment"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: !!link.exact }"
             (click)="closeMenu()"
           >
             {{ link.label }}
