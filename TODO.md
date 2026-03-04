@@ -1,3 +1,3 @@
 [ ] navbar current page highlight not showing
-[ ] after build copy dist/nano-scan-dr/browser/* to /Users/kartikr/Desktop/git/site-development/kartik/github-pages/kartik468.github.io/nanoscandr folder
-- first delete target folder content and then copy the new build content
+[ ] pdf is not loading in the viewer, check if we have given relative path
+[ ] can we increase the height of carousel a bit more... in mobile screen carousel controls are showing on top of View xx button

@@ -8,7 +8,8 @@
     "build:no-hash": "ng build --base-href ./ --output-hashing=none",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "copy:nano-scan-dr:site": "rm -rf /Users/kartikr/Desktop/git/site-development/kartik/github-pages/kartik468.github.io/nanoscandr/* && cp -r dist/nano-scan-dr/browser/. /Users/kartikr/Desktop/git/site-development/kartik/github-pages/kartik468.github.io/nanoscandr/"
+    "copy:nano-scan-dr:site": "rm -rf /Users/kartikr/Desktop/git/site-development/kartik/github-pages/kartik468.github.io/nanoscandr/* && cp -r dist/nano-scan-dr/browser/. /Users/kartikr/Desktop/git/site-development/kartik/github-pages/kartik468.github.io/nanoscandr/",
+    "deploy": "ng deploy --base-href=/nanoscandr/"
   },
   "prettier": {
     "printWidth": 100,
@@ -38,6 +39,7 @@
     "@angular/build": "^21.1.4",
     "@angular/cli": "^21.1.4",
     "@angular/compiler-cli": "^21.1.0",
+    "angular-cli-ghpages": "^3.0.2",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
