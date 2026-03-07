@@ -4,12 +4,16 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   background-color: var(--color-surface);
   color: var(--color-text);
   font-family: var(--font-sans);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 // Utility: constrained content width with consistent horizontal padding
@@ -32,4 +36,3 @@ body {
   white-space: nowrap;
   border: 0;
 }
-
