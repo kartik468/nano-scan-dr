@@ -3,7 +3,7 @@ import { Product } from '../models/product.model';
 
 // Shared PDFs — same asset used for all three products during testing
 const SHARED_PDFS = {
-  brochure: './assets/pdfs/product-20210310_RFA-1717S.pdf',
+  brochure: './assets/pdfs/product-in-detail-RFA-1717DIC_Catalogue.pdf',
   catalogue: './assets/pdfs/product-in-detail-RFA-1717DIC_Catalogue.pdf',
 };
 
@@ -12,8 +12,7 @@ const RFA_1717DIC: Product = {
   name: 'RFA-1717DIC',
   subtitle: 'Wide & Slim 17×17" Flat Panel Detector',
   tagline: 'Advanced Flat Panel Detector Technology for General Radiography',
-  heroImage:
-    'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&w=1600&q=80',
+  heroImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&w=1600&q=80',
   overview:
     'The RFA-1717DIC is a high-performance 17×17" flat panel detector designed for general radiography applications. ' +
     'Built with advanced IGZO TFT technology and CsI scintillator, it delivers high-resolution imaging, stable ' +
@@ -137,8 +136,7 @@ const RFA_1417S: Product = {
   name: 'RFA-1417S',
   subtitle: '14×17" Standard Flat Panel Detector',
   tagline: 'Versatile 14×17" detector for chest, spine, and extremity radiography',
-  heroImage:
-    'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&w=1600&q=80',
+  heroImage: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&w=1600&q=80',
   overview:
     'The RFA-1417S is a versatile 14×17" flat panel detector suited for chest, spine, and extremity ' +
     'imaging workflows. Its compact profile and lightweight design make it ideal for retrofit ' +
@@ -148,8 +146,7 @@ const RFA_1417S: Product = {
     {
       icon: 'resolution',
       title: '3.2 lp/mm Resolution',
-      description:
-        'High-quality diagnostic imaging for chest and extremity radiography workflows.',
+      description: 'High-quality diagnostic imaging for chest and extremity radiography workflows.',
     },
     {
       icon: 'speed',
@@ -255,8 +252,7 @@ const RFA_1014: Product = {
   name: 'RFA-1014',
   subtitle: '10×12" Portable Flat Panel Detector',
   tagline: 'Ultra-portable 10×12" detector for extremity and paediatric imaging',
-  heroImage:
-    'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&w=1600&q=80',
+  heroImage: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&w=1600&q=80',
   overview:
     'The RFA-1014 is a compact, ultra-portable flat panel detector optimized for extremity, ' +
     'paediatric, and point-of-care imaging. Weighing just 1.9 kg, it can be carried to bedside or ' +
@@ -370,7 +366,7 @@ const RFA_1014: Product = {
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
-  readonly products = signal<Product[]>([RFA_1717DIC, RFA_1417S, RFA_1014]);
+  readonly products = signal<Product[]>([RFA_1717DIC]);
 
   getById(id: string): Product | undefined {
     return this.products().find((p) => p.id === id);

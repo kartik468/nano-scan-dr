@@ -31,22 +31,22 @@ export class HomeComponent {
       alt: 'Medical imaging equipment in a clinical room',
       width: 1600,
       height: 900,
-      headline: 'RFA-1417S — 14×17" Versatile Detector',
+      headline: 'RFA-1717DIC — 17×17" General Radiography',
       subcopy:
         'Lightweight and retrofit-ready for chest, spine, and extremity imaging with reliable AED trigger.',
-      ctaLabel: 'View RFA-1417S',
-      ctaRoute: '/products/rfa-1417s',
+      ctaLabel: 'View RFA-1717DIC',
+      ctaRoute: '/products/rfa-1717dic',
     },
     {
       src: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&w=1600&q=80',
       alt: 'Clinician examining diagnostic monitor',
       width: 1600,
       height: 900,
-      headline: 'RFA-1014 — 10×12" Portable Detector',
+      headline: 'RFA-1717DIC — 17×17" General Radiography',
       subcopy:
         'Ultra-portable at 1.9 kg with dual WiFi/Ethernet connectivity. Ideal for bedside and paediatric imaging.',
-      ctaLabel: 'View RFA-1014',
-      ctaRoute: '/products/rfa-1014',
+      ctaLabel: 'View RFA-1717DIC',
+      ctaRoute: '/products/rfa-1717dic',
     },
   ];
 
