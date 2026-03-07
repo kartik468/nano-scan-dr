@@ -22,7 +22,7 @@ export class HomeComponent {
       height: 900,
       headline: 'RFA-1717DIC — 17×17" General Radiography',
       subcopy:
-        'High-resolution 3.4 lp/mm imaging with IP68 protection. Built for demanding general radiography workflows.',
+        'Advanced IGZO TFT technology with 3.4 lp/mm spatial resolution and 16-bit ADC for exceptional image clarity. IP68 waterproof protection for demanding clinical environments.',
       ctaLabel: 'View RFA-1717DIC',
       ctaRoute: '/products/rfa-1717dic',
     },
@@ -33,7 +33,7 @@ export class HomeComponent {
       height: 900,
       headline: 'RFA-1717DIC — 17×17" General Radiography',
       subcopy:
-        'Lightweight and retrofit-ready for chest, spine, and extremity imaging with reliable AED trigger.',
+        'Fast 2.5-second image acquisition with stable AED auto-trigger mode. 140μm pixel pitch delivers high-resolution imaging for precise diagnostics.',
       ctaLabel: 'View RFA-1717DIC',
       ctaRoute: '/products/rfa-1717dic',
     },
@@ -44,7 +44,7 @@ export class HomeComponent {
       height: 900,
       headline: 'RFA-1717DIC — 17×17" General Radiography',
       subcopy:
-        'Ultra-portable at 1.9 kg with dual WiFi/Ethernet connectivity. Ideal for bedside and paediatric imaging.',
+        'ISO 4090 cassette compatible for seamless system integration. Giga Ethernet connectivity ensures reliable data transfer with 3072×3072 pixel matrix.',
       ctaLabel: 'View RFA-1717DIC',
       ctaRoute: '/products/rfa-1717dic',
     },

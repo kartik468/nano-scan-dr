@@ -4,7 +4,6 @@
 
 .products__hero {
   padding: var(--space-16) 0 var(--space-10);
-  background: #f0f5ff;
 }
 
 .products__eyebrow {
@@ -41,7 +40,9 @@
   overflow: hidden;
   background: var(--color-surface);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 
 .products__card:hover {
@@ -141,7 +142,8 @@
   color: var(--color-primary);
   text-decoration: none;
   font-weight: var(--font-semibold);
-  transition: background var(--transition-fast),
+  transition:
+    background var(--transition-fast),
     color var(--transition-fast);
 }
 

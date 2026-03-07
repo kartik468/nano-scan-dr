@@ -1,6 +1,5 @@
 .contact {
   padding: var(--space-16) 0;
-  background: var(--color-surface-alt);
 }
 
 .contact__grid {
@@ -70,7 +69,8 @@ textarea {
   font: inherit;
   color: var(--color-text);
   background: var(--color-surface);
-  transition: border-color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 
@@ -110,7 +110,8 @@ textarea.is-invalid {
   color: var(--color-primary-contrast);
   font-weight: var(--font-semibold);
   cursor: pointer;
-  transition: transform var(--transition-fast),
+  transition:
+    transform var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 

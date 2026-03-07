@@ -2,10 +2,9 @@
   <section class="products__hero">
     <div class="container">
       <p class="products__eyebrow">Flat panel detectors</p>
-      <h1 class="products__title">Our product range</h1>
+      <h1 class="products__title">Our product</h1>
       <p class="products__lead">
-        From portable bedside units to full-size general radiography detectors —
-        all engineered for speed, resolution, and durability.
+        High-performance flat panel detector engineered for speed, exceptional resolution, and clinical durability.
       </p>
     </div>
   </section>
@@ -14,44 +13,35 @@
     <div class="container">
       <div class="products__grid">
         @for (product of products(); track product.id) {
-          <article class="products__card">
-            <div class="products__card-image-wrap">
-              <img
-                class="products__card-image"
-                [src]="product.heroImage"
-                [alt]="product.name + ' flat panel detector'"
-                width="800"
-                height="450"
-              />
-            </div>
+        <article class="products__card">
+          <div class="products__card-image-wrap">
+            <img class="products__card-image" [src]="product.heroImage" [alt]="product.name + ' flat panel detector'"
+              width="800" height="450" />
+          </div>
 
-            <div class="products__card-body">
-              <p class="products__card-id">{{ product.id.toUpperCase() }}</p>
-              <h2 class="products__card-name">{{ product.name }}</h2>
-              <p class="products__card-subtitle">{{ product.subtitle }}</p>
-              <p class="products__card-tagline">{{ product.tagline }}</p>
+          <div class="products__card-body">
+            <p class="products__card-id">{{ product.id.toUpperCase() }}</p>
+            <h2 class="products__card-name">{{ product.name }}</h2>
+            <p class="products__card-subtitle">{{ product.subtitle }}</p>
+            <p class="products__card-tagline">{{ product.tagline }}</p>
 
-              <ul class="products__card-stats">
-                @for (stat of product.performanceStats; track stat.label) {
-                  <li class="products__card-stat">
-                    <span class="products__card-stat-value">{{ stat.value }}</span>
-                    <span class="products__card-stat-unit">{{ stat.unit }}</span>
-                    <span class="products__card-stat-label">{{ stat.label }}</span>
-                  </li>
-                }
-              </ul>
+            <ul class="products__card-stats">
+              @for (stat of product.performanceStats; track stat.label) {
+              <li class="products__card-stat">
+                <span class="products__card-stat-value">{{ stat.value }}</span>
+                <span class="products__card-stat-unit">{{ stat.unit }}</span>
+                <span class="products__card-stat-label">{{ stat.label }}</span>
+              </li>
+              }
+            </ul>
 
-              <a
-                class="products__card-cta"
-                [routerLink]="'/products/' + product.id"
-              >
-                View details
-              </a>
-            </div>
-          </article>
+            <a class="products__card-cta" [routerLink]="'/products/' + product.id">
+              View details
+            </a>
+          </div>
+        </article>
         }
       </div>
     </div>
   </section>
 </main>
-
