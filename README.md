@@ -13,7 +13,7 @@ ng serve
 ## Deploy to github pages
 
 ```bash
-npm run deploy1
+npm run deploy
 ```
 
 - go to https://github.com/kartik468/nano-scan-dr/settings/pages
