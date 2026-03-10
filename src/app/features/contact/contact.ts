@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { EmailService } from '../../services/email.service';
+import { ToastService } from '../../services/toast.service';
 
 interface ContactItem {
   label: string;
@@ -17,8 +19,10 @@ interface ContactItem {
 })
 export class ContactSectionComponent {
   private readonly formBuilder = inject(FormBuilder);
+  private readonly emailService = inject(EmailService);
+  private readonly toastService = inject(ToastService);
 
-  readonly submitted = signal(false);
+  readonly sending = signal(false);
 
   readonly contactItems: ContactItem[] = [
     {
@@ -53,22 +57,23 @@ export class ContactSectionComponent {
   readonly emailControl = this.form.controls.email;
   readonly messageControl = this.form.controls.message;
 
-  clearSuccess(): void {
-    if (this.submitted()) {
-      this.submitted.set(false);
-    }
-  }
-
-  submit(): void {
-    this.clearSuccess();
-
+  async submit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    console.info('Contact form submitted', this.form.getRawValue());
-    this.submitted.set(true);
-    this.form.reset({ name: '', email: '', message: '' });
+    this.sending.set(true);
+    const { name, email, message } = this.form.getRawValue();
+
+    try {
+      await this.emailService.sendContactForm(name, email, message);
+      this.toastService.success('Message sent! We\'ll be in touch within 1\u20132 business days.');
+      this.form.reset({ name: '', email: '', message: '' });
+    } catch {
+      this.toastService.error('Failed to send message. Please try again.');
+    } finally {
+      this.sending.set(false);
+    }
   }
 }

@@ -36,7 +36,6 @@
             formControlName="name"
             [attr.aria-describedby]="'contact-name-error'"
             [class.is-invalid]="nameControl.touched && nameControl.invalid"
-            (input)="clearSuccess()"
           />
           @if (nameControl.touched && nameControl.hasError('required')) {
             <span id="contact-name-error" class="contact__error" role="alert">
@@ -53,7 +52,6 @@
             formControlName="email"
             [attr.aria-describedby]="'contact-email-error'"
             [class.is-invalid]="emailControl.touched && emailControl.invalid"
-            (input)="clearSuccess()"
           />
           @if (emailControl.touched && emailControl.hasError('required')) {
             <span id="contact-email-error" class="contact__error" role="alert">
@@ -74,7 +72,6 @@
             formControlName="message"
             [attr.aria-describedby]="'contact-message-error'"
             [class.is-invalid]="messageControl.touched && messageControl.invalid"
-            (input)="clearSuccess()"
           ></textarea>
           @if (messageControl.touched && messageControl.hasError('required')) {
             <span id="contact-message-error" class="contact__error" role="alert">
@@ -84,12 +81,14 @@
         </div>
 
         <div class="contact__actions">
-          <button class="contact__submit" type="submit">Send message</button>
-          @if (submitted()) {
-            <p class="contact__success" role="status" aria-live="polite">
-              Thanks for reaching out. We will respond within 1-2 business days.
-            </p>
-          }
+          <button
+            class="contact__submit"
+            type="submit"
+            [disabled]="sending()"
+            [attr.aria-busy]="sending()"
+          >
+            {{ sending() ? 'Sending\u2026' : 'Send message' }}
+          </button>
         </div>
       </form>
     </div>

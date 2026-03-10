@@ -1,0 +1,18 @@
+<div class="toast-container" aria-live="polite" aria-atomic="false">
+  @for (toast of toastService.toasts(); track toast.id) {
+    <div
+      class="toast"
+      [class]="'toast toast--' + toast.type"
+      [@slideIn]
+      [attr.role]="toast.type === 'error' ? 'alert' : 'status'"
+    >
+      <span class="toast__message">{{ toast.message }}</span>
+      <button
+        type="button"
+        class="toast__close"
+        (click)="toastService.dismiss(toast.id)"
+        aria-label="Dismiss notification"
+      >&times;</button>
+    </div>
+  }
+</div>

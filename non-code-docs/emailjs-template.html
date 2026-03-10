@@ -1,0 +1,95 @@
+  <!-- Outer wrapper -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f1f5f9; padding: 40px 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <tr>
+      <td align="center">
+
+        <!-- Email card (max 600px) -->
+        <table role="presentation" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+
+          <!-- ── Header ── -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 60%, #3b82f6 100%); padding: 36px 40px; text-align: center;">
+              <p style="margin: 0 0 8px 0; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65);">NanoScan DR</p>
+              <h1 style="margin: 0; font-size: 20px; font-weight: 700; color: #ffffff; letter-spacing: -0.3px;">New Contact Message</h1>
+            </td>
+          </tr>
+
+          <!-- ── Notice banner ── -->
+          <tr>
+            <td style="background-color: #eff6ff; border-bottom: 1px solid #dbeafe; padding: 14px 40px;">
+              <p style="margin: 0; font-size: 13px; color: #1e40af; text-align: center;">New message from <strong>{{name}}</strong> — please respond at your earliest convenience.</p>
+            </td>
+          </tr>
+
+          <!-- ── Body ── -->
+          <tr>
+            <td style="padding: 36px 40px;">
+
+              <!-- Sender card -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 28px;">
+                <tr>
+                  <td style="padding: 24px;">
+
+                    <!-- Name + time row -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td>
+                          <p style="margin: 0; font-size: 17px; font-weight: 700; color: #0f172a;">{{name}}</p>
+                          <p style="margin: 4px 0 0; font-size: 12px; color: #94a3b8;">{{time}}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Divider -->
+                    <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 18px 0;" />
+
+                    <!-- Details -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="padding-bottom: 14px;">
+                          <p style="margin: 0 0 4px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #94a3b8;">Email Address</p>
+                          <a href="mailto:{{email}}" style="font-size: 15px; color: #2563eb; text-decoration: none; font-weight: 500;">{{email}}</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p style="margin: 0 0 4px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #94a3b8;">Message</p>
+                          <p style="margin: 0; font-size: 15px; color: #0f172a; line-height: 1.65; white-space: pre-wrap;">{{message}}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+              <!-- CTA button -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center">
+                    <a href="mailto:{{email}}"
+                       style="display: inline-block; background: linear-gradient(135deg, #1d4ed8, #2563eb); color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none; padding: 14px 36px; border-radius: 8px; letter-spacing: 0.2px;">
+                      Reply
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- ── Footer ── -->
+          <tr>
+            <td style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 24px 40px; text-align: center;">
+              <p style="margin: 0 0 4px; font-size: 13px; font-weight: 600; color: #0f172a;">NanoScan DR</p>
+              <p style="margin: 0; font-size: 12px; color: #94a3b8;">This is an automated notification. Do not reply directly to this email.</p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Email card -->
+
+      </td>
+    </tr>
+  </table>
+
