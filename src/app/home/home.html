@@ -1,17 +1,9 @@
 <section id="carousel">
-  <app-carousel
-    [slides]="carouselSlides"
-    [headline]="carouselHeadline"
-    [subcopy]="carouselSubcopy"
-    [ctaLabel]="carouselCtaLabel"
-    [ctaHref]="carouselCtaHref"
-    [ctaRoute]="carouselCtaRoute"
-    [labels]="carouselLabels"
-    [autoAdvanceMs]="carouselAutoAdvanceMs"
-  />
+  <app-carousel [slides]="carouselSlides()" [headline]="carouselHeadline()" [subcopy]="carouselSubcopy()"
+    [ctaLabel]="carouselCtaLabel()" [ctaHref]="carouselCtaHref()" [ctaRoute]="carouselCtaRoute()"
+    [labels]="carouselLabels()" [autoAdvanceMs]="carouselAutoAdvanceMs()" />
 </section>
 
 <section id="contact" aria-labelledby="contact-section-heading">
   <app-contact-section />
 </section>
-

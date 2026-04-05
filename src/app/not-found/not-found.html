@@ -1,10 +1,10 @@
 <main class="not-found" role="main">
   <div class="not-found__content">
-    <span class="not-found__code" aria-hidden="true">404</span>
-    <h1 class="not-found__title">Page not found</h1>
+    <span class="not-found__code" aria-hidden="true">{{ notFoundConfig().code }}</span>
+    <h1 class="not-found__title">{{ notFoundConfig().title }}</h1>
     <p class="not-found__description">
-      The page you're looking for doesn't exist or has been moved.
+      {{ notFoundConfig().description }}
     </p>
-    <a class="not-found__cta" [routerLink]="['/']">Go back home</a>
+    <a class="not-found__cta" [routerLink]="[notFoundConfig().ctaRoute]">{{ notFoundConfig().ctaLabel }}</a>
   </div>
 </main>

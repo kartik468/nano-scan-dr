@@ -3,6 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { PdfViewerComponent } from '../shared/components/pdf-viewer/pdf-viewer';
 import { ProductService } from '../services/product.service';
+import { I18nService } from '../services/i18n.service';
 
 @Component({
   selector: 'app-product',
@@ -18,6 +19,7 @@ export class ProductComponent {
   private readonly productService = inject(ProductService);
   private readonly router = inject(Router);
   private readonly document = inject(DOCUMENT);
+  private readonly i18n = inject(I18nService);
 
   readonly product = computed(() => {
     const found = this.productService.getById(this.id());
@@ -27,6 +29,8 @@ export class ProductComponent {
     }
     return found;
   });
+
+  readonly productDetailConfig = computed(() => this.i18n.getProductDetail());
 
   readonly viewerOpen = signal(false);
   readonly activePdf = signal('');

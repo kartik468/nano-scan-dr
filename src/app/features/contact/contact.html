@@ -2,91 +2,72 @@
   <div class="container">
     <div class="contact__grid">
       <div class="contact__info">
-        <h2 class="contact__title">Contact Us</h2>
+        <h2 class="contact__title">{{ contactConfig().title }}</h2>
         <p class="contact__intro">
-          Connect with the NanoScanDR team to request product details, pricing, or a demo.
+          {{ contactConfig().intro }}
         </p>
 
         <div class="contact__details">
-          @for (item of contactItems; track item.label) {
-            <div class="contact__item">
-              <span class="contact__label">{{ item.label }}</span>
-              @if (item.href) {
-                <a class="contact__value" [href]="item.href">{{ item.value }}</a>
-              } @else if (item.lines?.length) {
-                <span class="contact__value">
-                  @for (line of item.lines; track line) {
-                    <span class="contact__line">{{ line }}</span>
-                  }
-                </span>
-              } @else {
-                <span class="contact__value">{{ item.value }}</span>
+          @for (item of contactItems(); track item.label) {
+          <div class="contact__item">
+            <span class="contact__label">{{ item.label }}</span>
+            @if (item.href) {
+            <a class="contact__value" [href]="item.href">{{ item.value }}</a>
+            } @else if (item.lines?.length) {
+            <span class="contact__value">
+              @for (line of item.lines; track line) {
+              <span class="contact__line">{{ line }}</span>
               }
-            </div>
+            </span>
+            } @else {
+            <span class="contact__value">{{ item.value }}</span>
+            }
+          </div>
           }
         </div>
       </div>
 
       <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()">
         <div class="contact__field">
-          <label class="contact__label" for="contact-name">Name</label>
-          <input
-            id="contact-name"
-            type="text"
-            formControlName="name"
-            [attr.aria-describedby]="'contact-name-error'"
-            [class.is-invalid]="nameControl.touched && nameControl.invalid"
-          />
+          <label class="contact__label" for="contact-name">{{ contactConfig().form.nameLabel }}</label>
+          <input id="contact-name" type="text" formControlName="name" [attr.aria-describedby]="'contact-name-error'"
+            [class.is-invalid]="nameControl.touched && nameControl.invalid" />
           @if (nameControl.touched && nameControl.hasError('required')) {
-            <span id="contact-name-error" class="contact__error" role="alert">
-              Name is required.
-            </span>
+          <span id="contact-name-error" class="contact__error" role="alert">
+            {{ contactConfig().form.nameError }}
+          </span>
           }
         </div>
 
         <div class="contact__field">
-          <label class="contact__label" for="contact-email">Email</label>
-          <input
-            id="contact-email"
-            type="email"
-            formControlName="email"
-            [attr.aria-describedby]="'contact-email-error'"
-            [class.is-invalid]="emailControl.touched && emailControl.invalid"
-          />
+          <label class="contact__label" for="contact-email">{{ contactConfig().form.emailLabel }}</label>
+          <input id="contact-email" type="email" formControlName="email" [attr.aria-describedby]="'contact-email-error'"
+            [class.is-invalid]="emailControl.touched && emailControl.invalid" />
           @if (emailControl.touched && emailControl.hasError('required')) {
-            <span id="contact-email-error" class="contact__error" role="alert">
-              Email is required.
-            </span>
+          <span id="contact-email-error" class="contact__error" role="alert">
+            {{ contactConfig().form.emailErrorRequired }}
+          </span>
           } @else if (emailControl.touched && emailControl.hasError('email')) {
-            <span id="contact-email-error" class="contact__error" role="alert">
-              Enter a valid email address.
-            </span>
+          <span id="contact-email-error" class="contact__error" role="alert">
+            {{ contactConfig().form.emailErrorInvalid }}
+          </span>
           }
         </div>
 
         <div class="contact__field">
-          <label class="contact__label" for="contact-message">Message</label>
-          <textarea
-            id="contact-message"
-            rows="5"
-            formControlName="message"
+          <label class="contact__label" for="contact-message">{{ contactConfig().form.messageLabel }}</label>
+          <textarea id="contact-message" rows="5" formControlName="message"
             [attr.aria-describedby]="'contact-message-error'"
-            [class.is-invalid]="messageControl.touched && messageControl.invalid"
-          ></textarea>
+            [class.is-invalid]="messageControl.touched && messageControl.invalid"></textarea>
           @if (messageControl.touched && messageControl.hasError('required')) {
-            <span id="contact-message-error" class="contact__error" role="alert">
-              Message is required.
-            </span>
+          <span id="contact-message-error" class="contact__error" role="alert">
+            {{ contactConfig().form.messageError }}
+          </span>
           }
         </div>
 
         <div class="contact__actions">
-          <button
-            class="contact__submit"
-            type="submit"
-            [disabled]="sending()"
-            [attr.aria-busy]="sending()"
-          >
+          <button class="contact__submit" type="submit" [disabled]="sending()" [attr.aria-busy]="sending()">
             {{ sending() ? 'Sending\u2026' : 'Send message' }}
           </button>
         </div>

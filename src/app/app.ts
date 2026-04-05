@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent, type NavLink, type NavLogo } from './shared/components/navbar/navbar';
 import { FooterComponent, type FooterLogo } from './shared/components/footer/footer';
 import { ToastComponent } from './shared/components/toast/toast';
+import { I18nService } from './services/i18n.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,8 @@ import { ToastComponent } from './shared/components/toast/toast';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
+  private readonly i18n = inject(I18nService);
+
   readonly navLogo: NavLogo = {
     src: './assets/images/logo.jpeg',
     alt: 'NanoScanDR logo',
@@ -20,14 +23,9 @@ export class App {
     route: '/',
   };
 
-  readonly navLinks: NavLink[] = [
-    { label: 'Overview', route: '/', exact: true },
-    { label: 'Products', route: '/products' },
-    { label: 'Contact', route: '/contact' },
-  ];
-
-  readonly navToggleLabel = 'Toggle navigation';
-  readonly navMenuId = 'main-navigation';
+  readonly navLinks = computed(() => this.i18n.getNavbar().links as NavLink[]);
+  readonly navToggleLabel = computed(() => this.i18n.getNavbar().toggleLabel);
+  readonly navMenuId = computed(() => this.i18n.getNavbar().menuId);
 
   readonly footerLogo: FooterLogo = {
     src: './assets/images/logo_without_text.png',
@@ -37,5 +35,5 @@ export class App {
     route: '/',
   };
 
-  readonly footerText = '© 2026 NanoScanDR. All rights reserved.';
+  readonly footerText = computed(() => this.i18n.getFooter().copyrightText);
 }

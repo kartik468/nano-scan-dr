@@ -1,0 +1,336 @@
+{
+  "navbar": {
+    "toggleLabel": "Toggle navigation",
+    "menuId": "main-navigation",
+    "links": [
+      {
+        "label": "Overview",
+        "route": "/",
+        "exact": true
+      },
+      {
+        "label": "Products",
+        "route": "/products"
+      },
+      {
+        "label": "Contact",
+        "route": "/contact"
+      }
+    ]
+  },
+  "footer": {
+    "copyrightText": "© 2026 NanoScanDR. All rights reserved."
+  },
+  "home": {
+    "carousel": {
+      "headline": "Advanced Flat Panel Detector Technology",
+      "subcopy": "Capture clear, detailed imaging in demanding environments with detectors engineered for speed, durability, and precision.",
+      "ctaLabel": "View all products",
+      "ctaRoute": "/products",
+      "labels": {
+        "region": "Product images",
+        "previous": "Previous slide",
+        "next": "Next slide",
+        "slidePrefix": "Go to slide"
+      },
+      "autoAdvanceMs": 5000,
+      "slides": [
+        {
+          "src": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&w=1600&q=80",
+          "alt": "Radiology technician reviewing X-ray scans",
+          "width": 1600,
+          "height": 900,
+          "headline": "RFA-1717DIC — 17×17\" General Radiography",
+          "subcopy": "Advanced IGZO TFT technology with 3.4 lp/mm spatial resolution and 16-bit ADC for exceptional image clarity. IP68 waterproof protection for demanding clinical environments.",
+          "ctaLabel": "View RFA-1717DIC",
+          "ctaRoute": "/products/rfa-1717dic"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&w=1600&q=80",
+          "alt": "Medical imaging equipment in a clinical room",
+          "width": 1600,
+          "height": 900,
+          "headline": "RFA-1717DIC — 17×17\" General Radiography",
+          "subcopy": "Fast 2.5-second image acquisition with stable AED auto-trigger mode. 140μm pixel pitch delivers high-resolution imaging for precise diagnostics.",
+          "ctaLabel": "View RFA-1717DIC",
+          "ctaRoute": "/products/rfa-1717dic"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&w=1600&q=80",
+          "alt": "Clinician examining diagnostic monitor",
+          "width": 1600,
+          "height": 900,
+          "headline": "RFA-1717DIC — 17×17\" General Radiography",
+          "subcopy": "ISO 4090 cassette compatible for seamless system integration. Giga Ethernet connectivity ensures reliable data transfer with 3072×3072 pixel matrix.",
+          "ctaLabel": "View RFA-1717DIC",
+          "ctaRoute": "/products/rfa-1717dic"
+        }
+      ]
+    }
+  },
+  "products": {
+    "hero": {
+      "eyebrow": "Flat panel detectors",
+      "title": "Our product",
+      "lead": "High-performance flat panel detector engineered for speed, exceptional resolution, and clinical durability."
+    },
+    "cardCta": "View details"
+  },
+  "productDetail": {
+    "backLink": "← All products",
+    "downloadLabel": "Download",
+    "closeLabel": "Close ✕",
+    "noPdfMessage": "No PDF selected.",
+    "getBrochureButton": "Get the full brochure",
+    "viewBrochureButton": "View brochure"
+  },
+  "contactPage": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Talk with NanoScanDR",
+      "lead": "Reach out for product demos, technical questions, or procurement details."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "intro": "Connect with the NanoScanDR team to request product details, pricing, or a demo.",
+    "form": {
+      "nameLabel": "Name",
+      "nameError": "Name is required.",
+      "emailLabel": "Email",
+      "emailErrorRequired": "Email is required.",
+      "emailErrorInvalid": "Enter a valid email address.",
+      "messageLabel": "Message",
+      "messageError": "Message is required.",
+      "submitButton": "Send message",
+      "successMessage": "Thanks for reaching out. We will respond within 1-2 business days."
+    },
+    "contactDetails": [
+      {
+        "label": "Address",
+        "lines": [
+          "NanoScanDR Medical Imaging",
+          "710 Market Street",
+          "San Francisco, CA 94103"
+        ]
+      },
+      {
+        "label": "Phone",
+        "value": "+1 (415) 555-0189",
+        "href": "tel:+14155550189"
+      },
+      {
+        "label": "Email",
+        "value": "sales@nanoscandr.com",
+        "href": "mailto:sales@nanoscandr.com"
+      },
+      {
+        "label": "Hours",
+        "lines": [
+          "Mon-Fri: 9:00 AM - 6:00 PM",
+          "Sat: 10:00 AM - 2:00 PM"
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "ctaLabel": "Go back home",
+    "ctaRoute": "/"
+  },
+  "pdf": {
+    "downloadLabel": "Download",
+    "closeLabel": "Close ✕",
+    "noSelectionMessage": "No PDF selected."
+  },
+  "products_data": {
+    "rfa-1717dic": {
+      "id": "rfa-1717dic",
+      "name": "RFA-1717DIC",
+      "subtitle": "Wide & Slim 17×17\" Flat Panel Detector",
+      "tagline": "Advanced Flat Panel Detector Technology for General Radiography",
+      "heroImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&w=1600&q=80",
+      "overview": "The RFA-1717DIC is a high-performance 17×17\" flat panel detector designed for general radiography applications. Built with advanced IGZO TFT technology and CsI scintillator, it delivers high-resolution imaging, stable Automatic Exposure Detection (AED), and reliable performance in clinical environments. Engineered to meet ISO 4090 cassette size standards, this detector integrates seamlessly into existing radiography systems while ensuring superior image clarity and workflow efficiency.",
+      "features": [
+        {
+          "icon": "resolution",
+          "title": "High Spatial Resolution",
+          "description": "3.4 lp/mm spatial resolution with 140 μm pixel pitch ensures exceptional diagnostic image clarity."
+        },
+        {
+          "icon": "speed",
+          "title": "Fast Acquisition",
+          "description": "Complete image acquisition in just 2.5 seconds, supporting efficient clinical workflows."
+        },
+        {
+          "icon": "aed",
+          "title": "Auto Exposure Detection",
+          "description": "Reliable AED trigger mode automatically detects x-ray exposure for hands-free operation."
+        },
+        {
+          "icon": "waterproof",
+          "title": "IP68 Protection",
+          "description": "Fully waterproof and dustproof to IP68 standard — built for demanding clinical environments."
+        },
+        {
+          "icon": "adc",
+          "title": "16-bit ADC",
+          "description": "65,536 grayscale levels captured via 16-bit analogue-to-digital conversion for superior image depth."
+        },
+        {
+          "icon": "network",
+          "title": "Gigabit Ethernet",
+          "description": "Wired 1000BaseT connectivity enables rapid, reliable image transfer to any DICOM workstation."
+        }
+      ],
+      "performanceStats": [
+        {
+          "value": "3.4",
+          "unit": "lp/mm",
+          "label": "Spatial Resolution",
+          "description": "Best-in-class sharpness for general radiography imaging."
+        },
+        {
+          "value": ">77%",
+          "unit": "MTF",
+          "label": "Modulation Transfer Function",
+          "description": "Measured at 0.5 lp/mm (CsI) — superior contrast retention."
+        },
+        {
+          "value": ">57%",
+          "unit": "DQE",
+          "label": "Detective Quantum Efficiency",
+          "description": "Measured at 1 lp/mm (CsI) — excellent dose efficiency."
+        }
+      ],
+      "specGroups": [
+        {
+          "category": "Imaging",
+          "specs": [
+            {
+              "label": "Scintillator",
+              "value": "CsI:Tl (Direct)"
+            },
+            {
+              "label": "Sensor Type",
+              "value": "a-Si TFT Active Matrix with PIN Diode"
+            },
+            {
+              "label": "Pixel Size",
+              "value": "140 μm"
+            },
+            {
+              "label": "Pixel Matrix",
+              "value": "3072 × 3072"
+            },
+            {
+              "label": "Spatial Resolution",
+              "value": "3.4 lp/mm"
+            },
+            {
+              "label": "ADC Resolution",
+              "value": "16 bits"
+            },
+            {
+              "label": "Grayscale Levels",
+              "value": "65,536"
+            },
+            {
+              "label": "X-ray Voltage Range",
+              "value": "40 – 150 kVp"
+            },
+            {
+              "label": "MTF",
+              "value": ">77% at 0.5 lp/mm (CsI)"
+            },
+            {
+              "label": "DQE",
+              "value": ">57% at 1 lp/mm (CsI)"
+            },
+            {
+              "label": "Acquisition Time",
+              "value": "2.5 seconds"
+            },
+            {
+              "label": "Trigger Modes",
+              "value": "Line Trigger (Manual), Auto Trigger (AED)"
+            },
+            {
+              "label": "Shot Mode",
+              "value": "Single Shot"
+            }
+          ]
+        },
+        {
+          "category": "Mechanical",
+          "specs": [
+            {
+              "label": "Detector Size",
+              "value": "460 × 460 × 15 mm"
+            },
+            {
+              "label": "Imaging Area",
+              "value": "17 × 17 inches (43 × 43 cm)"
+            },
+            {
+              "label": "Weight",
+              "value": "3.50 kg"
+            },
+            {
+              "label": "Cassette Compatibility",
+              "value": "ISO 4090 Standard"
+            }
+          ]
+        },
+        {
+          "category": "Connectivity",
+          "specs": [
+            {
+              "label": "Communication",
+              "value": "Wired Giga Ethernet (1000BaseT)"
+            },
+            {
+              "label": "Sync Output Port",
+              "value": "2 Port / TTL (0 – 5.0V)"
+            },
+            {
+              "label": "Power Supply",
+              "value": "Wired DC +15V"
+            }
+          ]
+        },
+        {
+          "category": "Environmental",
+          "specs": [
+            {
+              "label": "Operating Temperature",
+              "value": "10°C to +40°C"
+            },
+            {
+              "label": "Humidity Range",
+              "value": "20% – 75%"
+            },
+            {
+              "label": "Pressure Range",
+              "value": "70 – 106 kPa"
+            },
+            {
+              "label": "Protection Rating",
+              "value": "IP68 (Waterproof & Dustproof)"
+            },
+            {
+              "label": "OS Compatibility",
+              "value": "Windows 7 / 8 / 10 (32-bit & 64-bit)"
+            }
+          ]
+        }
+      ],
+      "pdfs": {
+        "brochure": "./assets/pdfs/product-in-detail-RFA-1717DIC_Catalogue.pdf",
+        "catalogue": "./assets/pdfs/product-in-detail-RFA-1717DIC_Catalogue.pdf"
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <main class="product">
   <section class="product__hero">
     <div class="container">
-      <a class="product__back" routerLink="/products">← All products</a>
+      <a class="product__back" [routerLink]="['/products']">{{ productDetailConfig().backLink }}</a>
 
       <div class="product__hero-grid">
         <div class="product__hero-copy">
@@ -13,25 +13,16 @@
         </div>
 
         <div class="product__hero-card">
-          <img
-            class="product__hero-image"
-            [src]="product().heroImage"
-            [alt]="product().name + ' in a clinical environment'"
-            width="800"
-            height="450"
-          />
+          <img class="product__hero-image" [src]="product().heroImage"
+            [alt]="product().name + ' in a clinical environment'" width="800" height="450" />
           <div class="product__hero-card-body">
-            <h2 class="product__hero-card-title">Get the full brochure</h2>
+            <h2 class="product__hero-card-title">{{ productDetailConfig().getBrochureButton }}</h2>
             <p class="product__hero-card-text">
               View or download the latest product documentation for procurement
               and clinical review.
             </p>
-            <button
-              class="product__hero-button"
-              type="button"
-              (click)="openPdf(product().pdfs.brochure)"
-            >
-              View brochure
+            <button class="product__hero-button" type="button" (click)="openPdf(product().pdfs.brochure)">
+              {{ productDetailConfig().viewBrochureButton }}
             </button>
           </div>
         </div>
@@ -42,12 +33,6 @@
 </main>
 
 
-<app-pdf-viewer
-  [pdfUrl]="activePdf()"
-  [isOpen]="viewerOpen()"
-  [productLabel]="product().name"
-  [downloadLabel]="'Download'"
-  [closeLabel]="'Close ✕'"
-  [iframeTitle]="'Product brochure'"
-  (closed)="closeViewer()"
-/>
+<app-pdf-viewer [pdfUrl]="activePdf()" [isOpen]="viewerOpen()" [productLabel]="product().name"
+  [downloadLabel]="productDetailConfig().downloadLabel" [closeLabel]="productDetailConfig().closeLabel"
+  [iframeTitle]="'Product brochure'" (closed)="closeViewer()" />

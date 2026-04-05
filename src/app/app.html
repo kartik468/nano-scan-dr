@@ -1,9 +1,9 @@
-<app-navbar [logo]="navLogo" [links]="navLinks" [toggleLabel]="navToggleLabel" [menuId]="navMenuId" />
+<app-navbar [logo]="navLogo" [links]="navLinks()" [toggleLabel]="navToggleLabel()" [menuId]="navMenuId()" />
 
 <main class="main-content">
   <router-outlet />
 </main>
 
-<app-footer [logo]="footerLogo" [text]="footerText" />
+<app-footer [logo]="footerLogo" [text]="footerText()" />
 
 <app-toast />

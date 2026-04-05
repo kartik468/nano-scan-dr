@@ -1,10 +1,10 @@
 <main class="products">
   <section class="products__hero">
     <div class="container">
-      <p class="products__eyebrow">Flat panel detectors</p>
-      <h1 class="products__title">Our product</h1>
+      <p class="products__eyebrow">{{ heroConfig().eyebrow }}</p>
+      <h1 class="products__title">{{ heroConfig().title }}</h1>
       <p class="products__lead">
-        High-performance flat panel detector engineered for speed, exceptional resolution, and clinical durability.
+        {{ heroConfig().lead }}
       </p>
     </div>
   </section>
@@ -36,7 +36,7 @@
             </ul>
 
             <a class="products__card-cta" [routerLink]="'/products/' + product.id">
-              View details
+              {{ cardCta() }}
             </a>
           </div>
         </article>
