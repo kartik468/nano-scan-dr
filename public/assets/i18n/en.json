@@ -69,7 +69,7 @@
     }
   },
   "products": {
-    "hero": {
+    "pageHeader": {
       "eyebrow": "Flat panel detectors",
       "title": "Our product",
       "lead": "High-performance flat panel detector engineered for speed, exceptional resolution, and clinical durability."
@@ -85,7 +85,7 @@
     "viewBrochureButton": "View brochure"
   },
   "contactPage": {
-    "hero": {
+    "pageHeader": {
       "eyebrow": "Contact",
       "title": "Talk with NanoScanDR",
       "lead": "Reach out for product demos, technical questions, or procurement details."

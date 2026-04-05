@@ -39,7 +39,7 @@ interface I18nData {
     };
   };
   products: {
-    hero: {
+    pageHeader: {
       eyebrow: string;
       title: string;
       lead: string;
@@ -55,7 +55,7 @@ interface I18nData {
     viewBrochureButton: string;
   };
   contactPage: {
-    hero: {
+    pageHeader: {
       eyebrow: string;
       title: string;
       lead: string;
@@ -156,7 +156,7 @@ export class I18nService {
   }
 
   /**
-   * Get nested object by dotted key path (e.g., 'products.hero')
+   * Get nested object by dotted key path (e.g., 'products.pageHeader')
    */
   getObject<T = any>(key: string, defaultValue?: T): T {
     const data = this.data();

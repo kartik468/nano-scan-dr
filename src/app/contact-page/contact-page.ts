@@ -12,5 +12,5 @@ import { I18nService } from '../services/i18n.service';
 export class ContactPageComponent {
   private readonly i18n = inject(I18nService);
 
-  readonly heroConfig = computed(() => this.i18n.getContactPage().hero);
+  readonly pageHeaderConfig = computed(() => this.i18n.getContactPage().pageHeader);
 }

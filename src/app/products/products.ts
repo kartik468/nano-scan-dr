@@ -15,6 +15,6 @@ export class ProductsComponent {
   private readonly i18n = inject(I18nService);
 
   readonly products = this.productService.products;
-  readonly heroConfig = computed(() => this.i18n.getProducts().hero);
+  readonly pageHeaderConfig = computed(() => this.i18n.getProducts().pageHeader);
   readonly cardCta = computed(() => this.i18n.getProducts().cardCta);
 }
